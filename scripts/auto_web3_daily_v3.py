@@ -538,7 +538,9 @@ def main(theme=None, dry_run=False, cover_style="cyberpunk"):
         log("Dry run 模式，跳过发布", "warning")
 
         # 保存预览文件
-        preview_path = os.path.expanduser(f"~/Downloads/web3_daily_preview_{today.strftime('%Y%m%d')}.html")
+        preview_dir = os.path.expanduser("~/Downloads")
+        os.makedirs(preview_dir, exist_ok=True)
+        preview_path = os.path.join(preview_dir, f"web3_daily_preview_{today.strftime('%Y%m%d')}.html")
         with open(preview_path, 'w', encoding='utf-8') as f:
             f.write(f'''<!DOCTYPE html>
 <html lang="zh-CN">
