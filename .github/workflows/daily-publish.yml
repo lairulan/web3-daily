@@ -1,0 +1,60 @@
+name: Web3 Daily Publish
+
+on:
+  schedule:
+    # 北京时间 10:30 = UTC 02:30
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: 'HTML theme (cyberpunk/dark_neon/ocean_tech)'
+        required: false
+        default: 'cyberpunk'
+      dry_run:
+        description: 'Dry run (true/false)'
+        required: false
+        default: 'false'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests zhdate certifi
+
+      - name: Run Web3 Daily Publisher
+        env:
+          DOUBAO_API_KEY: ${{ secrets.DOUBAO_API_KEY }}
+          WEB3_WECHAT_API_KEY: ${{ secrets.WEB3_WECHAT_API_KEY }}
+          WEB3_WECHAT_APPID: ${{ secrets.WEB3_WECHAT_APPID }}
+        run: |
+          cd scripts
+          python auto_web3_daily_v3.py \
+            --theme ${{ github.event.inputs.theme || 'cyberpunk' }} \
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: web3-daily-output-${{ github.run_number }}
+          path: |
+            ~/Downloads/web3_*.json
+            ~/Downloads/web3_*.html
+          retention-days: 7
+          if-no-files-found: ignore
