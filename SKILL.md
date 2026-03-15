@@ -1,6 +1,9 @@
 ---
 name: web3-daily
+version: 1.0.0
 description: Web3每日洞察自动发布助手。每天自动采集中英文Web3资讯（区块链技术、DeFi、NFT、市场行情、监管政策），翻译成中文，生成混合形式内容（10-15条热点要闻+800-1200字深度专题），自动发布到"三更Web3"微信公众号。触发词："Web3日报"、"生成Web3文章"、"Web3每日洞察"、"web3 daily"。
+author: rulanlai
+tags: [web3, blockchain, defi, nft, wechat, automation]
 ---
 
 # Web3 Daily - Web3每日洞察
@@ -91,7 +94,6 @@ description: Web3每日洞察自动发布助手。每天自动采集中英文Web
 1. **环境变量检查**：
    - `WECHAT_API_KEY` (固定值: xhs_fff41080b1861be192872e9cd62399a0)
    - `WEB3_WECHAT_APPID` (需配置)
-   - `OPENROUTER_API_KEY` 或 `DOUBAO_API_KEY` (至少一个)
 
 2. **脚本检查**：
    - `scripts/auto_web3_daily.py`
@@ -518,7 +520,6 @@ tags: [Web3, 区块链, DeFi, NFT]
 |--------|------|------|--------|
 | `WECHAT_API_KEY` | ✅ | 微绿流量宝API Key | xhs_fff41080b1861be192872e9cd62399a0 |
 | `WEB3_WECHAT_APPID` | ✅ | 三更Web3公众号AppID | 需配置 |
-| `OPENROUTER_API_KEY` | ✅* | OpenRouter API Key（推荐） | - |
 | `DOUBAO_API_KEY` | ✅* | 豆包API Key（备用） | - |
 
 > *至少需要设置其中一个
@@ -528,7 +529,6 @@ tags: [Web3, 区块链, DeFi, NFT]
 # 编辑 ~/.zshrc
 export WECHAT_API_KEY="xhs_fff41080b1861be192872e9cd62399a0"
 export WEB3_WECHAT_APPID="wx_your_appid_here"
-export OPENROUTER_API_KEY="your_key_here"
 export DOUBAO_API_KEY="your_key_here"
 
 # 使配置生效
@@ -607,7 +607,6 @@ jobs:
         env:
           WECHAT_API_KEY: ${{ secrets.WECHAT_API_KEY }}
           WEB3_WECHAT_APPID: ${{ secrets.WEB3_WECHAT_APPID }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           # 实际需要通过Claude运行完整流程
           echo "Web3 Daily task triggered"
@@ -679,11 +678,9 @@ launchctl load ~/Library/LaunchAgents/com.user.web3-daily.plist
 ```bash
 # 检查环境变量
 echo $WEB3_WECHAT_APPID
-echo $OPENROUTER_API_KEY
 
 # 设置环境变量
 export WEB3_WECHAT_APPID="wx_your_appid"
-export OPENROUTER_API_KEY="your_key"
 
 # 永久设置：编辑 ~/.zshrc
 echo 'export WEB3_WECHAT_APPID="wx_your_appid"' >> ~/.zshrc

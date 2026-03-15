@@ -28,7 +28,6 @@ else:
 print("\n2️⃣ 测试环境变量...")
 env_vars = {
     'DOUBAO_API_KEY': os.environ.get('DOUBAO_API_KEY'),
-    'OPENROUTER_API_KEY': os.environ.get('OPENROUTER_API_KEY'),
 }
 
 for key, value in env_vars.items():

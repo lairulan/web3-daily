@@ -40,7 +40,6 @@ def check_environment():
     }
 
     api_keys = {
-        'OPENROUTER_API_KEY': os.environ.get('OPENROUTER_API_KEY'),
         'DOUBAO_API_KEY': os.environ.get('DOUBAO_API_KEY'),
     }
 
@@ -52,7 +51,6 @@ def check_environment():
 
     # 至少需要一个 AI API Key
     if not any(api_keys.values()):
-        issues.append("❌ 至少需要设置 OPENROUTER_API_KEY 或 DOUBAO_API_KEY")
     else:
         configured = [k for k, v in api_keys.items() if v]
         log(f"✅ AI API 已配置: {', '.join(configured)}")

@@ -17,7 +17,6 @@ import re
 # API配置
 WECHAT_API_KEY = os.environ.get('WECHAT_API_KEY', 'xhs_fff41080b1861be192872e9cd62399a0')
 WECHAT_APP_ID = os.environ.get('WEB3_WECHAT_APPID', 'wx8a65cfea3de65092')
-OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
 DOUBAO_API_KEY = os.environ.get('DOUBAO_API_KEY', '')
 
 # 文件路径配置
@@ -33,8 +32,6 @@ def check_environment():
     issues = []
 
     # 检查必需的环境变量
-    if not OPENROUTER_API_KEY and not DOUBAO_API_KEY:
-        issues.append("❌ 未设置 OPENROUTER_API_KEY 或 DOUBAO_API_KEY（至少需要一个）")
     else:
         print("✅ AI API密钥已配置")
 
@@ -66,12 +63,10 @@ def check_environment():
     print("\n✅ 环境检查通过！\n")
     return True
 
-def call_ai_api(prompt, model="openrouter"):
+def call_ai_api(prompt, model="doubao"):
     """调用AI API"""
-    if model == "openrouter" and OPENROUTER_API_KEY:
-        url = "https://openrouter.ai/api/v1/chat/completions"
+        url = "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
         headers = {
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
             "Content-Type": "application/json"
         }
         data = {
