@@ -13,7 +13,7 @@ import re
 # API配置
 API_BASE = "https://wx.limyai.com/api/openapi"
 WECHAT_API_KEY = os.environ.get("WEB3_WECHAT_API_KEY", "")
-WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "wx8a65cfea3de65092")
+WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "")
 
 # 读取生成的HTML内容 - 使用移动端优化版本v2(紧凑版)
 html_file = os.path.expanduser("~/Documents/Obsidian/Web3日报/2026-01-30_Web3日报_移动端_v2.html")

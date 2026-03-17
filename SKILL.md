@@ -495,7 +495,7 @@ tags: [Web3, 区块链, DeFi, NFT]
 |------|-----|
 | 公众号名称 | 三更Web3 |
 | API Key | `xhs_fff41080b1861be192872e9cd62399a0` |
-| AppID | `wx8a65cfea3de65092` |
+| AppID | `${WECHAT_APP_ID}` |
 
 **发布参数**：
 ```json

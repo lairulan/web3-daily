@@ -14,7 +14,7 @@ import json
 # API配置
 API_BASE = "https://wx.limyai.com/api/openapi"
 WECHAT_API_KEY = os.environ.get("WEB3_WECHAT_API_KEY", "")
-WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "wx8a65cfea3de65092")
+WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "")
 
 # 二维码路径
 QRCODE_PATH = os.path.expanduser("~/.claude/skills/web3-daily/web3-daily/assets/brand-materials/qrcode/wechat-qrcode.png")

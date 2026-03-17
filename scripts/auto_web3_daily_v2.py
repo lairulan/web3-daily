@@ -24,7 +24,7 @@ from zhdate import ZhDate
 
 # API配置
 WECHAT_API_KEY = os.environ.get("WEB3_WECHAT_API_KEY", "")
-WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "wx8a65cfea3de65092")
+WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "")
 DOUBAO_API_KEY = os.environ.get("DOUBAO_API_KEY", "")
 API_BASE = "https://wx.limyai.com/api/openapi"
 
