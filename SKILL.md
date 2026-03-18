@@ -92,7 +92,7 @@ tags: [web3, blockchain, defi, nft, wechat, automation]
 
 **检查项目**：
 1. **环境变量检查**：
-   - `WECHAT_API_KEY` (固定值: xhs_fff41080b1861be192872e9cd62399a0)
+   - `WECHAT_API_KEY` (固定值: your_wechat_api_key_here)
    - `WEB3_WECHAT_APPID` (需配置)
 
 2. **脚本检查**：
@@ -494,7 +494,7 @@ tags: [Web3, 区块链, DeFi, NFT]
 | 项目 | 值 |
 |------|-----|
 | 公众号名称 | 三更Web3 |
-| API Key | `xhs_fff41080b1861be192872e9cd62399a0` |
+| API Key | `your_wechat_api_key_here` |
 | AppID | `${WECHAT_APP_ID}` |
 
 **发布参数**：
@@ -518,7 +518,7 @@ tags: [Web3, 区块链, DeFi, NFT]
 
 | 变量名 | 必需 | 说明 | 默认值 |
 |--------|------|------|--------|
-| `WECHAT_API_KEY` | ✅ | 微绿流量宝API Key | xhs_fff41080b1861be192872e9cd62399a0 |
+| `WECHAT_API_KEY` | ✅ | 微绿流量宝API Key | your_wechat_api_key_here |
 | `WEB3_WECHAT_APPID` | ✅ | 三更Web3公众号AppID | 需配置 |
 | `DOUBAO_API_KEY` | ✅* | 豆包API Key（备用） | - |
 
@@ -527,7 +527,7 @@ tags: [Web3, 区块链, DeFi, NFT]
 **配置方法**：
 ```bash
 # 编辑 ~/.zshrc
-export WECHAT_API_KEY="xhs_fff41080b1861be192872e9cd62399a0"
+export WECHAT_API_KEY="your_wechat_api_key_here"
 export WEB3_WECHAT_APPID="wx_your_appid_here"
 export DOUBAO_API_KEY="your_key_here"
 

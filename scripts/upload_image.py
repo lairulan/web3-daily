@@ -18,7 +18,7 @@ import ssl
 ssl_context = ssl._create_unverified_context()
 
 # ImgBB API配置（免费，无需注册）
-IMGBB_API_KEY = "d139e0e38dbe89f50b5dd73b6f9c7e70"  # 公共测试Key
+IMGBB_API_KEY = os.environ.get("IMGBB_API_KEY", "")  # 通过环境变量设置
 IMGBB_API_URL = "https://api.imgbb.com/1/upload"
 
 def upload_image_to_imgbb(image_path, name=None):
