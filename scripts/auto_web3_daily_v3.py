@@ -30,7 +30,7 @@ from html_templates import render_full_page, get_theme, THEMES, preview_theme
 # ============================================================
 
 # API 配置 - Web3日报专用
-WECHAT_API_KEY = os.environ.get("WEB3_WECHAT_API_KEY", "xhs_fff41080b1861be192872e9cd62399a0")
+WECHAT_API_KEY = os.environ.get("WEB3_WECHAT_API_KEY", "")
 WECHAT_APP_ID = os.environ.get("WEB3_WECHAT_APPID", "")
 DOUBAO_API_KEY = os.environ.get("DOUBAO_API_KEY", "")
 API_BASE = "https://wx.limyai.com/api/openapi"

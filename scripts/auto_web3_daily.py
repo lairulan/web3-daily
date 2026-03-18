@@ -15,7 +15,7 @@ from zhdate import ZhDate
 import re
 
 # API配置
-WECHAT_API_KEY = os.environ.get('WECHAT_API_KEY', 'xhs_fff41080b1861be192872e9cd62399a0')
+WECHAT_API_KEY = os.environ.get('WECHAT_API_KEY', '')
 WECHAT_APP_ID = os.environ.get('WEB3_WECHAT_APPID', '')
 DOUBAO_API_KEY = os.environ.get('DOUBAO_API_KEY', '')
 
