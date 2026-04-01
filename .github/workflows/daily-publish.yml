@@ -1,9 +1,12 @@
 name: Web3 Daily Publish
 
 on:
-  schedule:
+  repository_dispatch:
+    types: [daily-web3]
+  # schedule (disabled: managed by Cloudflare Worker github-scheduler):
+  # schedule:
     # 北京时间 10:30 = UTC 02:30
-    - cron: '30 2 * * *'
+  #   - cron: '30 2 * * *'
   workflow_dispatch:
     inputs:
       theme:
